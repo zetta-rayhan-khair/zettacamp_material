@@ -1,0 +1,9 @@
+<app-hero-card
+  *ngFor="let hero of heroList"
+  [hero]="hero"
+  (changeStatus)="updateHeroStatus($event)"
+></app-hero-card
+><br />
+<input matInput [(ngModel)]="heroName" />
+<br />
+<button (click)="onAddHero()">add hero</button>

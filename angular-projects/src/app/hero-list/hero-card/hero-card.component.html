@@ -1,0 +1,7 @@
+<div>
+  name : {{ hero?.name }}
+
+  status : {{ hero?.isActive ? "active" : "not-active" }}
+</div>
+
+<button (click)="changeStatus.emit(hero?._id)">change status</button>
