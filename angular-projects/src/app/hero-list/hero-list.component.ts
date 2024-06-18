@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { HeroCardComponent } from './hero-card/hero-card.component';
 import { NgFor } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HeroCardComponent } from './hero-card/hero-card.component';
 
 @Component({
   selector: 'app-hero-list',
@@ -51,6 +51,16 @@ export class HeroListComponent {
       });
 
       this.heroName = 'hero ...';
+    }
+  }
+
+  removeHero(event: any) {
+    if (typeof event === 'number' && event !== 0) {
+      const foundHeroIndex: any = this.heroList?.length
+        ? this.heroList.findIndex((hero: any) => hero?._id === event)
+        : null;
+      if (foundHeroIndex !== -1)
+        this.heroList.splice(foundHeroIndex, 1);
     }
   }
 }

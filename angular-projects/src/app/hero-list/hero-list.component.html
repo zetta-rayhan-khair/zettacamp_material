@@ -2,6 +2,7 @@
   *ngFor="let hero of heroList"
   [hero]="hero"
   (changeStatus)="updateHeroStatus($event)"
+  (removeHero)="removeHero($event)"
 ></app-hero-card
 ><br />
 <input matInput [(ngModel)]="heroName" />
